@@ -1,5 +1,6 @@
 import { players } from './players.js';
 
+let lastIndex = -1;
 
 
 async function rollDice() {
@@ -7,7 +8,14 @@ async function rollDice() {
 }
 
 function getRandomPlayers() {
-  return players[Math.floor(Math.random() * players.length)];
+  let newIndex;
+
+  do {
+    newIndex = Math.floor(Math.random() * players.length);
+  } while (newIndex === lastIndex);
+
+  lastIndex = newIndex;
+  return players[newIndex];
 }
 
 async function getRandomBlock() {

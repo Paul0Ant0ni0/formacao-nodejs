@@ -3,3 +3,4 @@
   - quem vence o confronto ganha um turbo (+ 1ponto) aleatoriamente
 - Criar uma função p/ sortear aleatoriamente os players
 - Adicionar um player extra
+- Validação para não repetir os players
