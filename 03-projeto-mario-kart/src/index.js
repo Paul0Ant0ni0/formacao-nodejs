@@ -1,21 +1,13 @@
-const player1 = {
-  NOME: "Mario",
-  VELOCIDADE: 4,
-  MANOBRABILIDADE: 3,
-  PODER: 3,
-  PONTOS: 0,
-};
+import { players } from './players.js';
 
-const player2 = {
-  NOME: "Luigi",
-  VELOCIDADE: 3,
-  MANOBRABILIDADE: 4,
-  PODER: 4,
-  PONTOS: 0,
-};
+
 
 async function rollDice() {
   return Math.floor(Math.random() * 6) + 1;
+}
+
+function getRandomPlayers() {
+  return players[Math.floor(Math.random() * players.length)];
 }
 
 async function getRandomBlock() {
@@ -165,6 +157,10 @@ async function declareWinner(character1, character2) {
 }
 
 (async function main() {
+  const player1 = getRandomPlayers();
+  const player2 = getRandomPlayers();
+  console.log(player1)
+
   console.log(
     `🏁🚨 Corrida entre ${player1.NOME} e ${player2.NOME} começando...\n`
   );
