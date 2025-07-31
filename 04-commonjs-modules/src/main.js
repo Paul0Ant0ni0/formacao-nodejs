@@ -1,22 +1,31 @@
-const { getFullName, productType } = require("./services/products");
-const products = require("./services/products");
+// Solicitando o conteudo de outro arquivo
+// Desistruturação
+const { getFullName, productType} = require("./services/products");
 
+const products = require("./services/products");
 const config = require("./services/config");
 const database = require("./services/database");
 
 async function main() {
-  console.log("carrinho compras:");
 
-  getFullName("1", "teclado");
-  products.getFullName("1", "teclado");
+    console.log("Carrinho de compras");
 
-  console.log(productType);
+    getFullName("1", "teclado");
+    products.getFullName("1", "teclado");
 
-  // product.getFullName("408", "mousepad");
-  // product.getFullName("508", "mouse");
-  // product.getProductLabel("mousepad");
+    console.log(productType);
 
-  database.connectToDatabase("my-data");
+    // products.getFullName("408", "mousepad");
+    // products.getFullName("508", "mouse");
+    // products.getProductlabel("mousepad");
+
+    // products.productType.version;
+    // console.log(config.client);
+
+    database.connectToDatabase("my-data");
+
+    
+    
 }
 
 main();

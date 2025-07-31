@@ -1,30 +1,36 @@
-// todas as funções que lidam com produto
+// todas as funcções que lidam com produto
+// todo arquivo do js é um módulo
+
 const productType = {
-  version: "digital",
-  tax: "x1",
-};
+    version: "digital",
+    tax: "x1"
+}
 
 //hidden const
 const apiURL = {
-  url: "www.google.com/api",
-};
+    url: "www.google.com/api"
+}
 
 async function getFullName(codeId, productName) {
-  console.log("productX: " + codeId + "--" + productName);
-  await doBreakLine();
+    await doBreakline();
+    console.log(`product: ${codeId} -- ${productName}`);
 }
 
-//hidden function
-async function doBreakLine() {
-  console.log("\n");
+//Função só acessível para o arquivo
+//hidden function / Função escondida
+async function doBreakline() {
+    console.log("\n");
 }
 
-async function getProductLabel(productName) {
-  console.log("Product " + productName);
+async function getProductlabel(productName) {
+    console.log(`product: ${productName}`)
+    
 }
 
+
+// exportando 
 module.exports = {
-  getFullName,
-  getProductLabel,
-  productType,
+    getFullName,
+    getProductlabel,
+    productType
 };
